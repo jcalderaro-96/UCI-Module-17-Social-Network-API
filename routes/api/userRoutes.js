@@ -1,10 +1,19 @@
-// routes/api/userRoutes.js — placeholder for user routes
-const router = require('express').Router(); // create router
+const router = require('express').Router();
+const userController = require('../../controllers/userController'); // import userController
 
-// placeholder GET route
-router.get('/', (req, res) => {
-res.send('User route active');
-}); // simple response for now
+// GET /api/users — get all users
+router.get('/', userController.getAllUsers);
 
-module.exports = router; // export router
-// end of file
+// GET /api/users/:id — get user by ID
+router.get('/:id', userController.getUserById);
+
+// POST /api/users — create new user
+router.post('/', userController.createUser);
+
+// PUT /api/users/:id — update user by ID
+router.put('/:id', userController.updateUser);
+
+// DELETE /api/users/:id — delete user by ID
+router.delete('/:id', userController.deleteUser);
+
+module.exports = router;

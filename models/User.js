@@ -1,47 +1,47 @@
-// models/User.js — defines the User schema
+// models/User.js — defines the User schema and virtual friendCount
 const { Schema, model } = require('mongoose'); // import Mongoose
 
 const userSchema = new Schema(
-{
-username: {
-type: String, // username is a string
-required: true, // required field
-unique: true, // must be unique
-trim: true, // removes whitespace
-},
-email: {
-type: String, // email is a string
-required: true, // required field
-unique: true, // must be unique
-match: [/.+@.+..+/, 'Must match a valid email address'], // regex for email format
-},
-thoughts: [
-{
-type: Schema.Types.ObjectId, // reference Thought IDs
-ref: 'Thought', // linked to Thought model
-},
-],
-friends: [
-{
-type: Schema.Types.ObjectId, // reference User IDs (self-reference)
-ref: 'User', // linked to User model
-},
-],
-},
-{
-toJSON: {
-virtuals: true, // include virtuals in JSON
-},
-id: false, // disable default _id duplication
-}
+  {
+    username: {
+      type: String,          // username text
+      unique: true,          // must be unique
+      required: true,        // required field
+      trim: true,            // trim whitespace
+    },
+    email: {
+      type: String,          // email string
+      required: true,        // required field
+      unique: true,          // must be unique
+      match: [/.+@.+\..+/, 'Please enter a valid email address'], // email format validator
+    },
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId, // link to Thought model
+        ref: 'Thought',              // reference name
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId, // link to User model for friends
+        ref: 'User',                 // reference name
+      },
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,      // include virtuals in JSON
+    },
+    id: false,            // prevent duplicate _id field
+  }
 );
 
-// virtual to get number of friends
+// Virtual: friendCount returns the length of friends array
 userSchema.virtual('friendCount').get(function () {
-return this.friends.length; // returns length of friends array
+  return this.friends.length; // return count of friends
 });
 
 const User = model('User', userSchema); // create User model
 
-module.exports = User; // export the model
+module.exports = User;                  // export the model
 // end of file

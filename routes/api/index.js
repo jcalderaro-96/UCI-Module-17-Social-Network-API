@@ -1,12 +1,11 @@
-// routes/index.js — root router to combine all routes
+// routes/api/index.js — combines user and thought routes for /api
+
 const router = require('express').Router(); // create router
-const apiRoutes = require('./api'); // import API routes
+const userRoutes = require('./userRoutes'); // import user routes
+const thoughtRoutes = require('./thoughtRoutes'); // import thought routes
 
-router.use('/api', apiRoutes); // mount API under /api
+router.use('/users', userRoutes); // mount user routes at /api/users
+router.use('/thoughts', thoughtRoutes); // mount thought routes at /api/thoughts
 
-router.use((req, res) => {
-res.status(404).send('Not Found'); // fallback for undefined routes
-}); // end route
-
-module.exports = router; // export router
+module.exports = router; // export the router
 // end of file
