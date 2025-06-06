@@ -117,3 +117,37 @@ This marks roughly 40% of the voyage complete. Here’s your current progress tr
 
 
 /---------------------------------------------------------------------/
+
+Commit Message (60% milestone – User routes fully functional, groundwork for Thoughts and reactions):
+
+feat: complete User API routes with full CRUD, integrate controller logic, prepare for Thoughts
+
+Replaced placeholder userRoutes with actual controller methods handling MongoDB queries
+
+Verified GET all users, GET by ID, POST, PUT, DELETE user endpoints fully operational
+
+Implemented error handling for invalid IDs and duplicate entries
+
+Confirmed delete user also removes associated thoughts (bonus completed)
+
+Prepared for next phase: Thought model routes and reaction subdocuments
+
+Server stable with all User API routes tested successfully via Insomnia
+
+This marks roughly 60% of the voyage complete. Here’s your current progress tracker:
+
+📊 Progress Tracker: 60% Complete
+
+✔️ 41–60%:
+
+Full User controller CRUD operations integrated into routes
+
+Error handling for invalid/missing users in place
+
+Bonus: User deletion cascades to thoughts removal
+
+Next 5% Milestone: Scaffold Thought controller with CRUD methods
+
+Next 20% Milestone (80% total): Complete Thought routes and reaction handling
+
+/---------------------------------------------------------------------/
