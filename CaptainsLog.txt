@@ -1,0 +1,26 @@
+Acknowledged. This is a full-stack backend-only project focused on building a working RESTful API with Express and Mongoose, structured for Insomnia testing. Our priorities are full-file code, schema accuracy, fast routing scaffolds, and synced models. We’ll start with the minimal viable project structure, using default timestamps and formatting where needed.
+
+We’ll begin by setting up your basic project skeleton: folders, base files, and initial Express + MongoDB config.
+
+First step: Project structure and basic server.
+
+Ready to create the following files and folders?
+
+pgsql
+Copy
+Edit
+📁 config/
+  📄 connection.js
+
+📁 models/
+  📄 User.js
+  📄 Thought.js
+
+📁 routes/
+  📁 api/
+    📄 index.js
+    📄 userRoutes.js
+    📄 thoughtRoutes.js
+
+📄 server.js
+✅ Default is yes — I’ll provide all files now unless you say otherwise. Ready to proceed?
