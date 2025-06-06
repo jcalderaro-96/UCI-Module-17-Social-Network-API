@@ -24,3 +24,58 @@ Edit
 
 📄 server.js
 ✅ Default is yes — I’ll provide all files now unless you say otherwise. Ready to proceed?
+
+-----------------------
+
+Commit Message (20% milestone – foundational structure + models):
+feat: scaffold project structure and implement User/Thought models
+- Added initial Express server with MongoDB connection
+- Created full directory structure with API routing placeholders
+- Implemented User model with schema validation and virtual friendCount
+- Implemented Thought model with embedded Reaction schema and virtual reactionCount
+- Enabled timestamp formatting using getters
+This marks approximately 20% total project completion. Here's your current progress tracking:
+
+📊 Progress Tracker: 20% Complete
+✔️ 0–20%:
+
+ Project structure + config
+
+ Basic Express server
+
+ MongoDB connection
+
+ All routing files stubbed
+
+ User.js + Thought.js models complete
+
+Next 5% Milestone: Controller scaffolding with User logic
+Next 20% Milestone (40% total): All user routes + CRUD complete and functional in Insomnia
+
+----------------------
+
+When you say "Pause, Captains Log" (or similar), I will respond with a structured progress report exactly like this:
+
+✅ 1. Commit Info
+Commit Message (current milestone %):
+
+plaintext
+Copy
+Edit
+[commit message here]
+Commit Description (for GitHub Desktop or log):
+
+plaintext
+Copy
+Edit
+[commit description here]
+This marks approximately [current %] total project completion. Here's your current progress tracking:
+
+📊 Progress Tracker: [current %] Complete
+✔️ 0–[current %]:
+
+[list of completed tasks]
+
+Next 5% Milestone: [brief next 5% goal]
+Next 20% Milestone ([next 20% total]): [brief next 20% goal]
+
