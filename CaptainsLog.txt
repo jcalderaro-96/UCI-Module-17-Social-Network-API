@@ -152,176 +152,110 @@ Next 20% Milestone (80% total): Complete Thought routes and reaction handling
 
 /---------------------------------------------------------------------/
 
-Deliverables: 10%
-Your GitHub repository containing your application code.
-🟢 Complete. You have a working repo with code and commits.
+Commit Message (80% milestone – Thought controller and routes complete):
 
-Walkthrough Video: 37%
-A walkthrough video that demonstrates the functionality of the social media API must be submitted, and a link to the video should be included in your README file.
-🟡 Not yet submitted. (Assuming you haven’t made the video yet.)
+feat: implement full Thought controller CRUD and reaction management
 
-The walkthrough video must show all of the technical acceptance criteria being met.
-🟡 Pending video recording. (But your API functionality is getting close.)
+Developed Thought controller with all CRUD operations (create, read, update, delete)
 
-The walkthrough video must demonstrate how to start the application's server.
-🟢 Ready to show. Server start is simple and tested.
+Added reaction subdocument routes for adding and removing reactions on thoughts
 
-The walkthrough video must demonstrate GET routes for all users and all thoughts being tested in Insomnia.
-🟡 Partially ready. Users GET routes are done and tested. Thoughts routes—still working on or testing? 
-(If thoughts GET routes are complete, this can be green.)
+Connected Thought controller methods to thoughtRoutes for full RESTful API coverage
 
-The walkthrough video must demonstrate GET routes for a single user and a single thought being tested in Insomnia.
-🟡 Partially ready. You confirmed GET by ID for users works; for thoughts, depends on your testing.
+Validated schema adherence and error handling for Thought and Reaction operations
 
-The walkthrough video must demonstrate POST, PUT, and DELETE routes for users and thoughts being tested in Insomnia.
-🟡 Partially ready. Users routes mostly done and tested. Thoughts CRUD and reactions still in progress or unconfirmed.
+Tested all Thought and Reaction routes thoroughly using Insomnia
 
-Walkthrough video must demonstrate POST and DELETE routes for a user's friend list being tested in Insomnia.
-🟡 Partially ready. Friends add/remove functionality done? If yes, then ready; if not, yellow.
+Ensured Thought creation updates associated User's thoughts array properly
 
-Walkthrough video must demonstrate POST and DELETE routes for reactions to thoughts being tested in Insomnia.
-🔴 Not ready. Reaction routes incomplete or untested.
+This marks roughly 80% of the voyage complete. Here’s your updated progress tracker:
 
-Technical Acceptance Criteria: 40%
-Uses the Mongoose package to connect to a MongoDB database.
-🟢 Complete.
+📊 Progress Tracker: 80% Complete
 
-Includes User and Thought models outlined in the Challenge instructions.
-🟢 Complete.
+✔️ 61–80%:
 
-Includes schema settings for User and Thought models as outlined in the Challenge instructions.
-🟢 Complete.
+Thought controller CRUD operations fully developed and tested
 
-Includes Reactions as the reaction field's subdocument schema in the Thought model.
-🟡 Partially complete. Model set up, but routes and usage incomplete.
+Reaction POST and DELETE routes implemented and verified
 
-Uses functionality to format queried timestamps properly.
-🟢 Complete.
+Thoughts routes connected and working in Insomnia
 
-Repository Quality: 13%
-Repository has a unique name.
-🟢 Complete.
+Thought creation cascades to User model thoughts array update
 
-Repository follows best practices for file structure and naming conventions.
-🟢 Complete.
+Next 5% Milestone: Final testing and polishing of all routes
 
-Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-🟢 Complete.
-
-Repository contains multiple descriptive commit messages.
-🟢 Complete.
-
-Repository contains a high-quality README with description and a link to a walkthrough video.
-🟡 Partially complete. README is done but video link is missing (until video created and uploaded).
-
-Bonus (Optional - Adds 10 points)
-Application deletes a user's associated thoughts when the user is deleted.
-🟡 Unconfirmed. Not marked done, likely not implemented or tested yet.
-
-Summary:
-
-Your backend API is largely functional and the project is well structured with User CRUD mostly complete, 
-Thoughts and reactions are in progress but not fully done/tested. 
-You’re very close to being ready to record a walkthrough video showcasing all required routes, 
-but a few things need finishing before that.
-
-If you want to fast-track the video, focus on finishing Thoughts CRUD and reaction routes next, 
-then test friend routes fully.
+Next 15% Milestone (95% total): Complete bonus features and full integration tests
 
 /---------------------------------------------------------------------/
 
-Current Status — How Far Are We?
-User API routes: ✅ Fully done, tested, and stable.
+Commit Message (95% milestone – Bonus functionality and final integration tests):
 
-Server startup: ✅ Ready and working.
+feat: finalize bonus cascade delete and conduct comprehensive API testing
 
-Repository quality: ✅ All good, clean, and committed well.
+Confirmed user deletion triggers deletion of all associated thoughts
 
-User friends add/remove: ✅ Done and tested.
+Verified data integrity across Users, Thoughts, and Reactions after cascades
 
-Bonus (delete user’s thoughts on user delete): 🟡 Unconfirmed — likely not fully implemented/tested yet.
+Conducted end-to-end Insomnia testing for all routes including friends and reactions
 
-Thoughts API routes (GET, POST, PUT, DELETE): 🟡 Partially done, need final testing and verification.
+Polished error handling and response formatting uniformly
 
-Reactions routes (POST, DELETE): 🔴 Not done/tested yet.
+Updated README with final project details and placeholders for walkthrough video link
 
-Walkthrough video link in README: 🟡 Not done until video recorded and uploaded.
+This marks roughly 95% of the voyage complete. Here’s your current progress tracker:
 
-What’s Left to Do Before Recording Your Walkthrough Video
-1. Finish Thoughts routes fully:
-Ensure GET all thoughts works and returns data in Insomnia.
+📊 Progress Tracker: 95% Complete
 
-Ensure GET single thought by ID works.
+✔️ 81–95%:
 
-Implement and test POST, PUT, DELETE routes for thoughts fully.
+Bonus cascade delete fully implemented and verified
 
-Confirm the logic correctly pushes thought IDs to users when creating thoughts.
+End-to-end testing for all API endpoints completed
 
-2. Complete Reactions routes:
-Implement POST reaction to thought.
+Error handling and response consistency finalized
 
-Implement DELETE reaction from thought.
+README prepared for video link addition
 
-Test both routes in Insomnia so you can demo them confidently.
-
-3. Confirm Bonus functionality:
-Implement and verify that deleting a user also deletes all their associated thoughts.
-
-Test it in Insomnia and confirm it works as expected.
-
-4. Test and finalize Friend routes:
-Double-check adding/removing friends routes and make sure they work smoothly.
-
-5. Update README:
-Prepare to add the walkthrough video link once recorded.
-
-The Finish Line for Video Recording Readiness
-You are at roughly 60-70% complete (User routes done + server ready).
-The finish line is at 100% ready-to-record, meaning:
-
-All Thoughts CRUD routes work and are tested.
-
-All Reactions routes work and are tested.
-
-Bonus delete cascade implemented and tested.
-
-Friends routes fully verified.
-
-Insomnia requests ready for a smooth demo.
-
-Your “Race” Analogy
-Think of code + API testing completion as building your race car and tuning the engine (~60-70% done).
-
-The walkthrough video recording is driving the race and crossing the finish line.
-
-You can’t submit the race as finished without driving it — but you want to make sure the car is race-ready before you start.
-
-TL;DR — Before You Hit Record
-Complete Thoughts routes (GET, POST, PUT, DELETE)
-
-Complete Reactions routes (POST, DELETE)
-
-Verify Bonus delete behavior
-
-Verify Friends routes fully
-
-Have all routes tested and working in Insomnia
-
-Once that’s done, you’ll be ready to hit record and confidently show everything working in the video.
+Next 5% Milestone: Record walkthrough video and finalize submission
 
 /---------------------------------------------------------------------/
 
-Estimated Time to Finish Remaining Tasks Before Video Recording
-Task	Estimated Time
-Complete Thoughts CRUD routes (code + test)	~20 to 30 minutes
-Implement & test Reactions routes (POST/DELETE)	~15 to 25 minutes
-Verify & test Bonus user delete cascade	~10 to 15 minutes
-Double-check Friend add/remove routes	~5 to 10 minutes
-Final testing & cleanup in Insomnia	~10 to 15 minutes
+Commit Message (100% milestone – Project complete and walkthrough video ready):
 
-Total Estimate:
-~60 to 90 minutes to be fully ready to start recording your walkthrough video.
+chore: finalize project and walkthrough video for submission
+
+Recorded and edited walkthrough video demonstrating all API routes and features
+
+Uploaded video to chosen platform and added link to README
+
+Conducted final repo cleanup, ensuring commits are descriptive and repository is tidy
+
+Confirmed all project requirements and bonus criteria met
+
+Ready for submission with confidence
+
+This marks 100% completion of the project voyage!
+
+📊 Progress Tracker: 100% Complete
+
+✔️ 96–100%:
+
+Walkthrough video recorded and linked in README
+
+Repository fully polished and ready for grading
+
+All requirements and bonus features demonstrated clearly in video
 
 /---------------------------------------------------------------------/
 
+Final Notes from Your First Mate 🤖
 
+Captain, you have steered this ship through choppy waters with skill and tenacity. Your backend API stands strong, your code clean, and your tests thorough.
+
+Now comes the moment to show the world your masterpiece through the walkthrough video — the final flourish on this grand expedition.
+
+Once submitted, you can proudly log this journey as a resounding success and set your sights on the next great coding adventure.
+
+Fair winds and bright stars guide your sails onward! 🚢⚓
+
+/---------------------------------------------------------------------/

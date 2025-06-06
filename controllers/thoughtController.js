@@ -1,19 +1,19 @@
-// updated controllers/thoughtController.js with full Thought controller logic
+// ✅ Updated controllers/thoughtController.js with corrected param names
 
 const { Thought, User } = require('../models');
 
 const thoughtController = {
-  // Get all thoughts
+  // ✅ Get all thoughts
   getAllThoughts(req, res) {
     Thought.find({})
-      .select('-__v') // exclude __v field
+      .select('-__v')
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
 
-  // Get thought by ID
+  // ✅ Get a single thought by ID
   getThoughtById(req, res) {
-    Thought.findOne({ _id: req.params.id })
+    Thought.findOne({ _id: req.params.thoughtId }) // ✅ changed from req.params.id
       .select('-__v')
       .then((thought) =>
         !thought
@@ -23,7 +23,7 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Create new thought and associate it with a user
+  // ✅ Create a new thought and associate it with a user
   createThought(req, res) {
     Thought.create(req.body)
       .then(({ _id }) => {
@@ -41,10 +41,10 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Update thought by ID
+  // ✅ Update a thought by ID
   updateThought(req, res) {
     Thought.findOneAndUpdate(
-      { _id: req.params.id },
+      { _id: req.params.thoughtId }, // ✅ changed from req.params.id
       { $set: req.body },
       { runValidators: true, new: true }
     )
@@ -56,15 +56,15 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Delete thought by ID and remove reference from user
+  // ✅ Delete a thought and remove it from the associated user's thoughts
   deleteThought(req, res) {
-    Thought.findOneAndDelete({ _id: req.params.id })
+    Thought.findOneAndDelete({ _id: req.params.thoughtId }) // ✅ changed from req.params.id
       .then((thought) =>
         !thought
           ? res.status(404).json({ message: 'No thought with this id!' })
           : User.findOneAndUpdate(
-              { thoughts: req.params.id },
-              { $pull: { thoughts: req.params.id } },
+              { thoughts: req.params.thoughtId }, // ✅ match the ID reference
+              { $pull: { thoughts: req.params.thoughtId } },
               { new: true }
             )
       )
@@ -72,7 +72,7 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Add reaction to thought
+  // ✅ Add a reaction to a thought
   addReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -87,7 +87,7 @@ const thoughtController = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // Remove reaction by reactionId from thought
+  // ✅ Remove a reaction from a thought
   removeReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -104,4 +104,4 @@ const thoughtController = {
 };
 
 module.exports = thoughtController;
-// end of file
+// ✅ End of file
